@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f1115;
+    color: #e8eef7;
+}
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-orden {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #334050;
+    background: #10161c;
+    color: #e7eff6;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.app-header h1 {
+    margin: 0;
+    color: #57ccf2;
+    letter-spacing: 0.08em;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 16px;
+}
+
+.panel {
+    background: #1a1f27;
+    border: 1px solid #29313b;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: #bcd9e3;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #2db8ea;
+    color: #04131a;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background: #334050;
+    color: #e6f3f8;
+}
+
+.btn-danger {
+    background: #de4d4d;
+    color: #fff;
+}
+
+.platos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.plato-card {
+    background: #13171d;
+    border: 1px solid #28313c;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.plato-card:hover,
+.plato-card.active {
+    border-color: #57ccf2;
+}
+
+.plato-nombre {
+    font-weight: bold;
+    margin: 0 0 6px 0;
+}
+
+.plato-meta {
+    margin: 0;
+    color: #9cb2c0;
+    font-size: 13px;
+}
+
+.empty-state {
+    color: #91a4b0;
+    padding: 10px 0;
+}
+
+.detalle-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.detalle-table th,
+.detalle-table td {
+    text-align: left;
+    border-bottom: 1px solid #2f3a47;
+    padding: 8px 4px;
+}
+
+.detalle-total {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #57ccf2;
+    font-weight: bold;
+}
+
+.detalle-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    background: #161d25;
+    border: 1px solid #2c3642;
+    border-radius: 12px;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    color: #c8dce6;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #334050;
+    background: #10161c;
+    color: #e7eff6;
+}
+
+.search-results {
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid #2f3a47;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.search-item {
+    padding: 8px;
+    border-bottom: 1px solid #29313b;
+    cursor: pointer;
+}
+
+.search-item:last-child {
+    border-bottom: 0;
+}
+
+.search-item:hover {
+    background: #1f2934;
+}
+
+.receta-editor {
+    border: 1px solid #2f3a47;
+    border-radius: 8px;
+    min-height: 140px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.receta-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #29313b;
+}
+
+.receta-row:last-child {
+    border-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#detallePlato {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
